@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://t3.ftcdn.net/jpg/06/55/62/76/360_F_655627693_lgt3FhJGnNTmgks0O7PdfNgKGI41WF2c.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .kalendarz {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 480px;
+    margin: 20px;
+    width: 100%;
+  }
+  
+  .dzien {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .dzien:hover {
+    background-color: #f8e1d1;
+  }
+  
+  .dzien::before {
+    content: attr(data-day);
+    position: absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: fantasy;
+    color: red;
+    text-shadow: 
+    -2px -2px 0 black,  
+     2px -2px 0 black,  
+    -2px  2px 0 black,  
+     2px  2px 0 black;
+  }
+  
+  .dzien a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dzien:hover a {
+    opacity: 1;
+  }
+  
+  .dzien a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
